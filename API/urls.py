@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import include, path
 from rest_framework import routers
-from API.REST.views import mon_super_test
+from API.REST.views import mon_super_test, test
 
 
 router = routers.DefaultRouter()
@@ -24,6 +24,7 @@ router = routers.DefaultRouter()
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
+    path('test/', test),
     path('find_sound/', mon_super_test),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

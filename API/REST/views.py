@@ -16,6 +16,12 @@ warnings.filterwarnings("ignore")
 
 #################################################
 
+def test(request):
+    return JsonResponse({
+        'message': "Hello"
+    })
+
+
 @api_view(['GET', 'POST'])
 def mon_super_test(request):
     print("=" * 50)
